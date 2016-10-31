@@ -1,0 +1,23 @@
+@import 'https://fonts.googleapis.com/css?family=Chelsea+Market|Josefin+Sans|Open+Sans|Bungee+Inline';
+
+#path {
+  stroke: blue;
+}
+#circle{
+  stroke: red;
+}
+h1 {
+  padding: 0;
+  margin: 0;
+  border-bottom: 0;
+  position: relative;
+}
+body {
+  background-image: url(Images/Galaxy.jpg);
+  background-size: cover;
+  font-family:Bungee Inline;
+  color: blue;
+}
+#canvas {
+  position: relative;
+}
