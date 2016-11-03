@@ -1,23 +1,43 @@
 @import 'https://fonts.googleapis.com/css?family=Chelsea+Market|Josefin+Sans|Open+Sans|Bungee+Inline';
 
-#path {
-  stroke: blue;
+.planet {
+animation: rotating 8s linear infinite;
 }
-#circle{
-  stroke: red;
+@keyframes rotating {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
+
 h1 {
   padding: 0;
   margin: 0;
   border-bottom: 0;
   position: relative;
+  font-size: 60px;
+  text-align: center;
 }
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
 body {
-  background-image: url(Images/Galaxy.jpg);
-  background-size: cover;
   font-family:Bungee Inline;
   color: blue;
 }
+
 #canvas {
   position: relative;
+  background-image: url(Images/Galaxy.jpg);
+  background-size: cover;
+
+}
+
+#clipPath {
+  stroke: red;
 }

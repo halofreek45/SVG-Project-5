@@ -4,49 +4,55 @@
     <meta charset="utf-8">
   </head>
   <body>
-<h1>This scene depicts the Tertiary extinction event</h1>
     <link rel="stylesheet" type="text/css" href="SVG.css">
-    <svg id="canvas" width="100%" viewBox="0 0 750 360">
+    <svg id="canvas" width="100%" viewBox="0 0 750 400">
+
+      <defs>
+          <clipPath id="buttonClip">
+            <rect x="9" y="10" width="7" height="20" fill="black"/>
+            <rect x="24" y="10" width="7" height="20" fill="black"/>
+          </clipPath>
+        </defs>
 
       <!--Sun Filter-->
       <filter id="sunFilter" x="0%" y="0%" width="100%" height="100%">
-        <feImage xlink:href="file://C:\Users\Student\Downloads\Sun.png"/>
+        <feImage xlink:href="Images/Sun.png"/>
       </filter>
       <!--Sun Filter-->
     <!--Mercury Filter-->
       <filter id="mercuryFilter" x="0%" y="0%" width="100%" height="100%">
-        <feImage xlink:href="file://C:\Users\Student\Downloads\Mercury.png"/>
+        <feImage xlink:href="Images/Mercury.png"/>
     </filter>
     <!--Venus Filter-->
     <filter id="venusFilter" x="0%" y="0%" width="100%" height="100%">
-      <feImage xlink:href="file://C:\Users\Student\Downloads\Venus.png"/>
+      <feImage xlink:href="Images/Venus.png"/>
   </filter>
   <!--Earth Filter-->
   <filter id="earthFilter" x="0%" y="0%" width="100%" height="100%">
-    <feImage xlink:href="file://C:\Users\Student\Downloads\Earth.png"/>
+    <feImage xlink:href="Images/Earth.png"/>
 </filter>
 <filter id="explosionFilter" x="0%" y="0%" width="100%" height="100%">
-  <feImage xlink:href="file://C:\Users\Student\Downloads\earthExplosion.png"/>
+  <feImage xlink:href="Images/earthExplosion.png"/>
 </filter>
 <!--Mars Filter-->
 <filter id="marsFilter" x="0%" y="0%" width="100%" height="100%">
-  <feImage xlink:href="file://C:\Users\Student\Downloads\Mars.png"/>
+  <feImage xlink:href="Images/Mars.png"/>
 </filter>
 <!--Jupiter Filter-->
 <filter id="jupiterFilter" x="0%" y="0%" width="100%" height="100%">
-  <feImage xlink:href="file://C:\Users\Student\Downloads\Jupiter.png"/>
+  <feImage xlink:href="Images/Jupiter.png"/>
 </filter>
 <!--Saturn Filter-->
 <filter id="saturnFilter" x="0%" y="0%" width="100%" height="100%">
-  <feImage xlink:href="file://C:\Users\Student\Downloads\Saturn.png"/>
+  <feImage xlink:href="Images/Saturn.png"/>
 </filter>
 <!--Uranus Filter-->
 <filter id="uranusFilter" x="0%" y="0%" width="100%" height="100%">
-  <feImage xlink:href="file://C:\Users\Student\Downloads\Uranus.png"/>
+  <feImage xlink:href="Images/Uranus.png"/>
 </filter>
 <!--Neptune Filter-->
 <filter id="neptuneFilter" x="0%" y="0%" width="100%" height="100%">
-  <feImage xlink:href="file://C:\Users\Student\Downloads\Neptune.png"/>
+  <feImage xlink:href="Images/Neptune.png"/>
 </filter>
       <!--Mercury Path-->
       <path fill="none" id="mercuryPath" d="M290,175a60,60 0 1,0 120,0a60,60 0 1,0 -120,0"/>
@@ -66,25 +72,25 @@
       <path fill="none" id="neptunePath" d="M120,175a180,180 0 1,0 360,0a180,180 0 1,0 -360,0"/>
 
       <!--Mercury Planet-->
-      <circle id="mercuryPlanet" cx="" cx="" r="3.8" filter="url(#mercuryFilter)">
-              <animateMotion dur="2.4" repeatCount="indefinite">
+      <circle id="mercuryPlanet" class="planet" cx="" cx="" r="3.8" filter="url(#mercuryFilter)">
+              <animateMotion dur="2.4" repeatCount="indefinite" begin="startAll.end">
       <mpath xlink:href="#mercuryPath"/>
     </animateMotion>
       </circle>
       <!--Venus Planet-->
-      <circle id="venusPlanet" cx="" cx="" r="8.9" filter="url(#venusFilter)">
-              <animateMotion dur="6.2" repeatCount="indefinite">
+      <circle id="venusPlanet" class="planet" cx="" cx="" r="8.9" filter="url(#venusFilter)">
+              <animateMotion dur="6.2" repeatCount="indefinite" begin="startAll.end">
       <mpath xlink:href="#venusPath"/>
       </animateMotion>
       </circle>
       <!--Earth Planet-->
-      <circle id="earthPlanet" cx="" cx="" r="10" filter="url(#earthFilter)">
-              <animateMotion dur="10" repeatCount="indefinite">
+      <circle id="earthPlanet" class="planet" cx="" cx="" r="10" filter="url(#earthFilter)">
+              <animateMotion dur="10" repeatCount="indefinite" begin="startAll.end">
       <mpath xlink:href="#earthPath"/>
       </animateMotion>
       </circle>
       <circle id="earthPlanet" cx="" cx="" r="3" filter="url(#explosionFilter)" opacity="0">
-              <animateMotion dur="10" repeatCount="indefinite">
+              <animateMotion dur="10" repeatCount="indefinite" begin="startAll.end">
       <mpath xlink:href="#earthPath"/>
       </animateMotion>
       <animate id="explosionAppear" attributeName="opacity" from="0" to="1" dur=".000001" begin="meteorFlash.end"/>
@@ -92,49 +98,58 @@
       <animate attributeName="opacity" from="1" to="0" dur="7" begin="explosionAppear.end"/>
       </circle>
       <!--Mars Planet-->
-      <circle id="marsPlanet" cx="" cx="" r="5.22" filter="url(#marsFilter)">
-              <animateMotion dur="18.8" repeatCount="indefinite">
+      <circle id="marsPlanet" class="planet" cx="" cx="" r="5.22" filter="url(#marsFilter)">
+              <animateMotion dur="18.8" repeatCount="indefinite" begin="startAll.end">
       <mpath xlink:href="#marsPath"/>
       </animateMotion>
       </circle>
       <!--Jupiter Planet-->
-      <circle id="jupiterPlanet" cx="" cx="" r="25" filter="url(#jupiterFilter)">
-              <animateMotion dur="118.6" repeatCount="indefinite">
+      <circle id="jupiterPlanet" class="planet" cx="" cx="" r="25" filter="url(#jupiterFilter)">
+              <animateMotion dur="118.6" repeatCount="indefinite" begin="startAll.end">
       <mpath xlink:href="#jupiterPath"/>
       </animateMotion>
       </circle>
       <!--Saturn Planet-->
-      <circle id="saturnPlanet" cx="" cx="" r="15" filter="url(#saturnFilter)">
-              <animateMotion dur="294.6" repeatCount="indefinite">
+      <circle id="saturnPlanet" class="planet" cx="" cx="" r="15" filter="url(#saturnFilter)">
+              <animateMotion dur="294.6" repeatCount="indefinite" begin="startAll.end">
       <mpath xlink:href="#saturnPath"/>
       </animateMotion>
       </circle>
       <!--Uranus Planet-->
-      <circle id="uranusPlanet" cx="" cx="" r="15" filter="url(#uranusFilter)">
-              <animateMotion dur="840.1" repeatCount="indefinite">
+      <circle id="uranusPlanet" class="planet" cx="" cx="" r="15" filter="url(#uranusFilter)">
+              <animateMotion dur="840.1" repeatCount="indefinite" begin="startAll.end">
       <mpath xlink:href="#uranusPath"/>
       </animateMotion>
       </circle>
       <!--Neptune Planet-->
-      <circle id="neptunePlanet" cx="" cx="" r="10" filter="url(#neptuneFilter)">
-              <animateMotion dur="1648" repeatCount="indefinite">
+      <circle id="neptunePlanet" class="planet" cx="" cx="" r="10" filter="url(#neptuneFilter)">
+              <animateMotion dur="1648" repeatCount="indefinite" begin="startAll.end">
       <mpath xlink:href="#neptunePath"/>
       </animateMotion>
       </circle>
 
-      <image x="700" y="0" height="80" width="80" xlink:href="file://C:\Users\Student\Downloads\Meteor.png">
-        <animate attributeName="x" from="700" to="425" dur="15" fill="freeze" begin="10s"/>
-    <animate id="meteorToEarth" attributeName="y" from="0" to="125" dur="15" fill="freeze" begin="10s"/>
+      <image x="700" y="0" height="80" width="80" xlink:href="Images/Meteor.png">
+        <animate id="meteorDelay" attributeName="opacity" from="1" to="1" dur="10" begin="startAll.end"/>
+        <animate attributeName="x" from="700" to="425" dur="15" fill="freeze" begin="meteorDelay.end"/>
+    <animate id="meteorToEarth" attributeName="y" from="0" to="125" dur="15" fill="freeze" begin="meteorDelay.end"/>
     <animate attributeName="opacity" from="1" to="0" dur=".00000001" fill="freeze" begin="meteorToEarth.end"/>
       </image>
 
-<circle filter="url(#sunFilter)" r="40" cx="350" cy="175"></circle>
+<circle filter="url(#sunFilter)" r="40" cx="350" cy="175">
+<animate attributeName="r" from="40" to="200" dur="5" begin="click" fill="freeze"/>
+</circle>
 
 <rect x="0" y="0" width="1000" height="1000" fill="white" opacity="0">
-  <animate id="meteorFlash"attributeName="opacity" from="0" to="1" dur=".000000000001" begin="meteorToEarth.end"/>
+  <animate id="meteorFlash" attributeName="opacity" from="0" to="1" dur=".000000000001" begin="meteorToEarth.end"/>
   <animate attributeName="opacity" from="1" to="0" dur="5" begin="meteorFlash.end"/>
 </rect>
+<polygon points="10,10 30,17.5, 10,25 10,25" fill="black">
+<animate id="startAll" attributeName="points" from="10,10 30,17.5 10,25 10,25" to="10,10 30,10 30,30 10,30" dur=".75" begin="click" fill="freeze"/>
+<animate attributeName="clip-path" from="" to="url(#buttonClip)" dur=".75" begin="click" fill="freeze"/>
+</polygon>
 
 </svg>
+<h1>Solar Model</h1>
+<h2>This scene depicts the Tertiary extinction event</h2>
   </body>
 </html>
